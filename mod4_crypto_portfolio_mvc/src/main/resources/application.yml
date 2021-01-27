@@ -1,0 +1,25 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          dragon:
+            client-id: dragon
+            client-secret: eca6c9f5-26b3-40b1-9245-9065eb0cbf08
+            client-name: Dragon
+            scope: openid
+            redirect-uri: http://localhost:8081/login/oauth2/code/dragon
+            client-authentication-method: basic
+            authorization-grant-type: authorization_code
+            provider: keycloak-provider  
+        provider:
+          keycloak-provider:
+            issuer-uri: http://localhost:8080/auth/realms/Demo
+logging:
+  level:
+    root: INFO
+    com.memorynotfound: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    
+server:  port: 8081    
